@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{521DD89A-47B8-471C-8E06-A0641B190B8D}</ProjectGuid>
+    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
+    <BSP_VERSION>4.6R4</BSP_VERSION>
+    <InPlaceBSPSubdir />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.2.0/8.0.1/r3</ToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.2.0/8.0.1/r3</ToolchainVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>
+      </CPPLanguageStandard>
+      <AdditionalIncludeDirectories>..\..\Cube\Inc;..\..\Cube\Drivers\CMSIS\Include;..\..\Cube\Drivers\CMSIS\Device\ST\STM32F0xx\Include;..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc;..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy;..\..\Cube\Middlewares\Third_Party\FatFs\src;..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>flash_layout;STM32F070x6;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>
+      </CPPLanguageStandard>
+      <AdditionalIncludeDirectories>..\..\Cube\Inc;..\..\Cube\Drivers\CMSIS\Include;..\..\Cube\Drivers\CMSIS\Device\ST\STM32F0xx\Include;..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc;..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy;..\..\Cube\Middlewares\Third_Party\FatFs\src;..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>flash_layout;STM32F070x6;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Cube\Src\user_diskio.c" />
+    <ClCompile Include="..\..\Cube\Src\fatfs.c" />
+    <ClCompile Include="..\..\Cube\Src\usb_device.c" />
+    <ClCompile Include="..\..\Cube\Src\usbd_conf.c" />
+    <ClCompile Include="..\..\Cube\Src\usbd_desc.c" />
+    <ClCompile Include="..\..\Cube\Src\usbd_storage_if.c" />
+    <ClCompile Include="..\..\Cube\Src\stm32f0xx_it.c" />
+    <ClCompile Include="..\..\Cube\Src\stm32f0xx_hal_msp.c" />
+    <ClCompile Include="..\..\Cube\Src\main.c" />
+    <ClCompile Include="..\..\Cube\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rtc.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rtc_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_uart.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_uart_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_spi.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_spi_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pcd.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pcd_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_crc.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_crc_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c" />
+    <ClCompile Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\diskio.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\ff.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\ff_gen_drv.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\option\syscall.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Src\usbd_msc.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Src\usbd_msc_bot.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Src\usbd_msc_data.c" />
+    <ClCompile Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Src\usbd_msc_scsi.c" />
+    <None Include="stm32.props" />
+    <ClCompile Include="$(BSP_ROOT)\STM32F0xxxx\StartupFiles\startup_stm32f070x6.c" />
+    <ClInclude Include="..\..\Cube\Inc\ffconf.h" />
+    <ClInclude Include="..\..\Cube\Inc\user_diskio.h" />
+    <ClInclude Include="..\..\Cube\Inc\fatfs.h" />
+    <ClInclude Include="..\..\Cube\Inc\usb_device.h" />
+    <ClInclude Include="..\..\Cube\Inc\usbd_conf.h" />
+    <ClInclude Include="..\..\Cube\Inc\usbd_desc.h" />
+    <ClInclude Include="..\..\Cube\Inc\usbd_storage_if.h" />
+    <ClInclude Include="..\..\Cube\Inc\stm32f0xx_it.h" />
+    <ClInclude Include="..\..\Cube\Inc\stm32f0xx_hal_conf.h" />
+    <ClInclude Include="..\..\Cube\Inc\main.h" />
+    <ClInclude Include="..\..\Cube\Drivers\CMSIS\Include\core_cm0.h" />
+    <ClInclude Include="..\..\Cube\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h" />
+    <ClInclude Include="..\..\Cube\Drivers\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rtc.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rtc_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_uart_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_spi.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_spi_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pcd.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pcd_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_crc_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_tim_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h" />
+    <ClInclude Include="..\..\Cube\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\diskio.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\ff.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\ffconf_template.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\Third_Party\FatFs\src\integer.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc\usbd_msc.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc\usbd_msc_bot.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc\usbd_msc_data.h" />
+    <ClInclude Include="..\..\Cube\Middlewares\ST\STM32_USB_Device_Library\Class\MSC\Inc\usbd_msc_scsi.h" />
+    <None Include="CubeSoftware-Debug.vgdbsettings" />
+    <None Include="CubeSoftware-Release.vgdbsettings" />
+    <None Include="stm32.xml" />
+  </ItemGroup>
+</Project>
